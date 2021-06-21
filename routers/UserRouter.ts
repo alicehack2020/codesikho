@@ -16,7 +16,7 @@ constructor()
 getRouter()
 {
   
-  this.router.get('/login',UserController.login); 
+  this.router.post('/login',UserController.login); 
 }
 
 postRouter()
