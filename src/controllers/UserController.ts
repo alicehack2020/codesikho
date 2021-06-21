@@ -4,9 +4,17 @@ export class UserController{
     {
        // res.send(req.query);
         // res.send(req.body);
+        console.log(req.body);
 
-       const email=req.query.email;
-       const password=req.query.password;
+        console.log(req.body.email);
+
+        console.log(req.body.password);
+
+        
+
+       const email=req.body.email;
+       const password=req.body.password;
+
 
        const user=new User({email:email,password:password});
     

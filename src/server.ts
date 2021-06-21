@@ -1,8 +1,7 @@
-//import bodyParser from 'body-parser';
-import * as express from 'express';
+ import * as express from 'express';
 import * as mongoose from 'mongoose';
+import bodyParser = require('body-parser');
 import UserRouter from '../routers/UserRouter';
-
  
 export class Server
 {
@@ -18,7 +17,7 @@ export class Server
    setConfiguration()
    {
      this.setMongodb();
-    // this.configureBodyParser();
+     this.configureBodyParser();
    }
 
 
@@ -33,15 +32,17 @@ export class Server
     
    }
 
-  //  configureBodyParser()
-  //  {
-  //  // var bodyParser = require('body-parser')
-  //     this.app.use(bodyParser.urlencoded({extended:true}));
-  //   }
+   configureBodyParser()
+   {       
+      this.app.use(bodyParser.urlencoded({extended: true}));
+      this.app.use(bodyParser.json());
+  
+    }
 
    setRoutes()
    {
     this.app.use('/api/user', UserRouter);
+    //this.app.use('/api/user',)
    }
 
    error402Handller(){
