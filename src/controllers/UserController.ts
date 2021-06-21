@@ -1,12 +1,9 @@
-export class UserController{
-    static login(req,res)
-    {
+import { nextTick } from "process";
 
-        res.send([
-      {
-        message:"login"
-      }
-    
-        ])
+export class UserController{
+    static login(req,res,next)
+    {
+     const error =new Error("user not found");
+     next(error);
     }
 }
