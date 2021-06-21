@@ -11,7 +11,7 @@ export class Server
        this.setConfiguration();
        this.setRoutes();
       this.error402Handller();
-      // this.handleErrors();
+       this.handleErrors();
     
    }
 
