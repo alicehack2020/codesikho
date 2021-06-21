@@ -1,4 +1,5 @@
 import { Router} from "express";
+import { UserController } from "../src/controllers/UserController";
   
 class UserRouter
 {
@@ -14,36 +15,8 @@ constructor()
 
 getRouter()
 {
-  this.router.get('/login',(req,res)=>
-  {
-    res.send([
-      
-      {
-      message:"welcome",
-      value:2021
-    }
-  ,
-  [ {
-    message:"welcome",
-    value:2021
-  },
-  {
-    message:"welcome",
-    value:2021
-  }, {
-    message:"welcome",
-    value:2021
-  }, {
-    message:"welcome",
-    value:2021
-  }
-
-]
-
-
-  ])
   
-   });
+  this.router.get('/login',UserController.login); 
 }
 
 postRouter()
